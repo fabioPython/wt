@@ -1,10 +1,10 @@
 {
   "storeName": "website_live",
-  "lastUpdate": "2025-06-15T04:54:29.455Z",
+  "lastUpdate": "2025-06-15T09:58:44.766Z",
   "siteName": "webTuyo ",
   "siteDomain": "https://Your.Domain",
   "siteIcon": "favicon-32x32.png",
-  "workerAddress": "https://webtuyo-worker.fabio-serra-web2.workers.dev",
+  "workerAddress": "",
   "cookieBlockId": -1,
   "imageCacheDuration": 1440,
   "serverSync": false,
@@ -19509,7 +19509,7 @@
           "component": {
             "anchorName": "section1",
             "title$L": [
-              "TEST99",
+              "TEST100",
               "tde&nbsp;",
               "itaaaalijhba&nbsp;",
               "",
@@ -19535,7 +19535,7 @@
               ""
             ],
             "subtitle$L": [
-              "<b>sdfgsdf</b>fghjf ghjfghj fgh <b>dfgh</b> dgfh <b>dfghty</b> e4<b>dfsgsdfgyer</b>&nbsp;<b>&nbsp;tybrtyv</b> rrtyert",
+              "<b>sdfgsdf</b>fghjf <span class=\"fontwt-pacifico-regular\">ghjfghj</span> fgh <b>dfgh</b> dgfh <b>dfghty</b> e4<b>dfsgsdfgyer</b>&nbsp;<b>&nbsp;tyfdsdfg brtyv</b> rrtyert",
               "",
               "italiano",
               "",
