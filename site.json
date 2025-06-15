@@ -1,6 +1,6 @@
 {
   "storeName": "website_live",
-  "lastUpdate": "2025-06-14T07:06:19.728Z",
+  "lastUpdate": "2025-06-15T02:25:12.942Z",
   "siteName": "webTuyo ",
   "siteDomain": "https://Your.Domain",
   "siteIcon": "favicon-32x32.png",
@@ -19511,7 +19511,7 @@
             "title$L": [
               "TEST99",
               "tde&nbsp;",
-              "itaaaalia&nbsp;",
+              "itaaaalijhba&nbsp;",
               "",
               "",
               "",
@@ -19535,7 +19535,7 @@
               ""
             ],
             "subtitle$L": [
-              "sdfgsdffghjf ghjfghj fgh dfgh dgfh <b>dfghty</b> e4<b>dfsgsdfgyer</b>&nbsp;&nbsp;tybrtyv rrtyert",
+              "<b>sdfgsdf</b>fghjf ghjfghj fgh <b>dfgh</b> dgfh <b>dfghty</b> e4<b>dfsgsdfgyer</b>&nbsp;<b>&nbsp;tybrtyv</b> rrtyert",
               "",
               "italiano",
               "",
@@ -19561,9 +19561,9 @@
               ""
             ],
             "description$PL": [
-              "<b>Your Website Descriptions herecv<b>bgn</b> hfh fgh ghm sgh df TTTTT&nbsp;ss fdfdfgsdg&nbsp;</b>",
+              "<b>Your Website <b>Descriptions</b> <b>here</b>cv<b>bgn</b> hfh <b>fgh</b> ghm sgh d<b>f TTTTT</b>&nbsp;<b>ss</b> fdfdfgsdg&nbsp;</b>",
               "",
-              "<b>Your Website Descriptions herecv<b>bgn</b> hfh fgh ghm sgh df TTTTT&nbsp;ss fdsdg&nbsp;</b>",
+              "<b>Your <b>Website</b> Descriptions herecv<b>bgn</b> hfh fgh ghm <b>sgh</b> df TTTTT&nbsp;ss fdsdkjng&nbsp;</b>",
               "",
               "",
               "",
@@ -19765,7 +19765,7 @@
             "Title$L": [
               "<span class=\"wt-reserved-allignment inline-block text-justify w-full\">Build Stunning Websites with - Ease!fg hgfh dgfsdfg sdf sdfg&nbsp;&nbsp;fgh dfgh dfgh fgs sd fgsgsdfg sdfg sdsdfg sdf sdf&nbsp;</span>",
               "",
-              "",
+              "<span class=\"wt-reserved-allignment inline-block text-justify w-full\">Build Stunning Websites with - Ease!fg hgfh dgfsdfg sdf sdfg&nbsp;&nbsp;fgh dfgh dfgh fgs sd fgsgsdfg sdfg sdsdfg sdf sdf&nbsp;</span>",
               "",
               "",
               "",
@@ -19815,9 +19815,9 @@
               ""
             ],
             "Description$PL": [
-              "<span class=\"fontwt-pacifico-regular\">dsafdssd </span>gsdfgs <b>dfg</b> sd fg s dfg sdf serg sd fggfdg dfgsgr sdfgsd sdfg fgsdfgs&nbsp;sdfgs df",
+              "<span class=\"fontwt-pacifico-regular\">dsafdssd </span><span class=\"fontwt-default\">gsdfgs</span> <b>dfg</b> sd fg s dfg <span class=\"fontwt-default\">sdf serg </span>sd fggfdg dfgsgr sdfgsd sdfg <span class=\"fontwt-pacifico-regular\">fgsdfgs</span>&nbsp;sdfgs df",
               "",
-              "",
+              "<span class=\"fontwt-pacifico-regular\">dsafdssd </span><span class=\"fontwt-default\">gsdfgs</span> <b>dfg</b> sd fg s dfg <span class=\"fontwt-default\">sdf serg </span>sd fggfdg dfgsgr sdfgsd sdfg <span class=\"fontwt-pacifico-regular\">fgsdfgs</span>&nbsp;sdfgs df",
               "",
               "",
               "",
@@ -19965,7 +19965,7 @@
                 "featureTitle$L": [
                   "<i>Built-In SEO Tools@@</i>",
                   "",
-                  "",
+                  "<i>Built-In SEO Tools@@</i>",
                   "",
                   "",
                   "",
@@ -21196,7 +21196,7 @@
                 "featureDescription$PL": [
                   "Easily create sites in multiple languages.",
                   "",
-                  "",
+                  "Easily create sites in multiple languages.",
                   "",
                   "",
                   "",
@@ -21228,7 +21228,7 @@
                 "featureTitle$L": [
                   "Custom Block Creation",
                   "",
-                  "",
+                  "Custom Block Creation",
                   "",
                   "",
                   "",
@@ -21254,7 +21254,7 @@
                 "featureDescription$PL": [
                   "Build and reuse your own content blocks.",
                   "",
-                  "",
+                  "Build and reuse your own content blocks.",
                   "",
                   "",
                   "",
@@ -21312,7 +21312,7 @@
                 "featureDescription$PL": [
                   "Design layouts with customizable block slots.",
                   "",
-                  "",
+                  "Design layouts with customizable block slots.",
                   "",
                   "",
                   "",
@@ -21370,7 +21370,7 @@
                 "featureDescription$PL": [
                   "Optimize your site with built-in SEO features.",
                   "",
-                  "",
+                  "Optimize your site with built-in SEO features.",
                   "",
                   "",
                   "",
