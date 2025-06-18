@@ -1,0 +1,70 @@
+name: Squash History
+
+on:
+  workflow_dispatch: # Allows manual triggering AND programmatic triggering via API
+    # Inputs removed
+
+jobs:
+  squash_and_deploy:
+    runs-on: ubuntu-latest
+    # Removed: if: github.event.inputs.confirmation == 'yes-i-am-sure'
+
+    permissions:
+      contents: write # To push the squashed commit
+      pages: write    # To deploy to Pages
+      id-token: write # To authenticate with OIDC for Pages deployment
+
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
+        with:
+          egress-policy: audit
+
+      - name: Checkout the target branch
+        uses: actions/checkout@v4
+        with:
+          ref: main # Hardcoded branch to squash and deploy
+          # fetch-depth: 0 # Ensure full history is fetched for orphan branch creation if needed, though checkout already does this by default now
+
+      - name: Configure Git User
+        run: |
+          git config user.name "GitHub Action Bot"
+          git config user.email "actions-bot@github.com"
+
+      - name: Perform the Squash Operation
+        env:
+          TARGET_BRANCH: main # Hardcoded
+          NEW_COMMIT_MESSAGE: "docs: Regenerate site from latest content (squashed)" # Hardcoded
+        run: |
+          set -e # Exit immediately if a command exits with a non-zero status
+
+          echo "ℹ️ Information: About to squash all history on branch '$TARGET_BRANCH'"
+          echo "This will replace all existing commits with a single new commit."
+          echo "Current HEAD is $(git rev-parse HEAD)"
+
+          git checkout --orphan new_history_branch
+          git add -A
+          git commit -m "$NEW_COMMIT_MESSAGE"
+          git branch -D "$TARGET_BRANCH"
+          git branch -m "$TARGET_BRANCH"
+          
+          echo "Force pushing '$TARGET_BRANCH' to origin..."
+          git push -f origin "$TARGET_BRANCH"
+
+          echo "✅ History for branch '$TARGET_BRANCH' has been squashed to a single commit."
+          echo "New HEAD is $(git rev-parse HEAD)"
+
+      - name: Verify Squash (Optional)
+        env:
+          TARGET_BRANCH: main # Hardcoded
+        run: |
+          # Checkout again to ensure we get the fresh state from remote
+          git fetch origin "$TARGET_BRANCH"
+          git checkout "$TARGET_BRANCH"
+          COMMIT_COUNT=$(git rev-list --count HEAD)
+          echo "Number of commits on $TARGET_BRANCH: $COMMIT_COUNT"
+          if [ "$COMMIT_COUNT" -ne 1 ]; then
+            echo "Error: Expected 1 commit after squash, but found $COMMIT_COUNT."
+            exit 1
+          fi
+          echo "Verification successful: Branch has 1 commit."

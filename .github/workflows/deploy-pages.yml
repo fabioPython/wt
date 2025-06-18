@@ -1,0 +1,61 @@
+# .github/workflows/deploy-pages.yml
+
+name: Deploy to GitHub Pages
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch_to_deploy:
+        description: 'The branch containing the site content to deploy.'
+        required: true
+        default: 'main' # Or perhaps 'gh-pages' if you build to a separate branch
+        type: string
+
+jobs:
+  deploy_site:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }} # To show the deployed URL in the action summary
+
+    permissions:
+      contents: read   # To checkout the code
+      pages: write    # To deploy to Pages
+      id-token: write # To authenticate with OIDC for Pages deployment
+
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
+        with:
+          egress-policy: audit # Configure as needed, audit is a good start
+
+      - name: Checkout the specified branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.branch_to_deploy }}
+          # fetch-depth: 0 # Uncomment if your build process needs full history
+
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v4
+        # No specific configuration usually needed if deploying from root of the branch
+        # to root of gh-pages site and your repository settings are correct.
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Path to the directory containing your built site files.
+          # - If your site content is directly in the repository root and doesn't need a build: '.'
+          # - If your Jekyll build outputs to '_site': './_site'
+          # - If your Vite/React/Vue build outputs to 'dist': './dist'
+          # - If your Hugo build outputs to 'public': './public'
+          # ADJUST THIS PATH BASED ON YOUR BUILD OUTPUT OR WHERE YOUR FILES ARE:
+          path: '.' # Example: For sites with no build step, files at root.
+          # path: './_site' # Example: For Jekyll default output
+          # path: './dist'   # Example: For Vite/NextJS export output
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+        # This will deploy the artifact uploaded in the previous step.
+        # Ensure your repository's Pages settings are configured to deploy from "GitHub Actions".
